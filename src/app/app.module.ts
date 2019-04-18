@@ -8,6 +8,8 @@ import {RouterModule, Routes} from '@angular/router';
 import { TaskComponent } from './board/task/task.component';
 import { SubtaskComponent } from './board/task/subtask/subtask.component';
 import {FormsModule} from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http';
+import {CustomSort} from './pipes/customsort.pipe';
 
 const appRoutes: Routes = [
   { path: 'board/:id', component: BoardComponent, pathMatch: 'full' },
@@ -21,12 +23,14 @@ const appRoutes: Routes = [
     HomepageComponent,
     BoardComponent,
     TaskComponent,
-    SubtaskComponent
+    SubtaskComponent,
+    CustomSort
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

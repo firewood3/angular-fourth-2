@@ -1,8 +1,8 @@
-import {Subtask} from './subtask';
+import {SubTask} from './subTask';
 
 export class Task {
   constructor(public id: number,
               public title: string,
-              public subtask: Subtask[],
+              public subtask: SubTask[],
               taskheaderId: string){}
 }

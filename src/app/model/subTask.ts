@@ -1,4 +1,4 @@
-export class Subtask {
+export class SubTask {
   constructor(public id: number,
               public title: string) {}
 }

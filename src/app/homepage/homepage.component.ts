@@ -14,11 +14,16 @@ export class HomepageComponent implements OnInit {
   constructor(private trelloApiService: TrelloApiService) { }
 
   ngOnInit() {
-    this.boards = this.trelloApiService.getBoards();
+    this.trelloApiService
+      .getBoardsJSON()
+      .subscribe(
+        boards => {this.boards = boards},
+        error => {console.log('getBoards Error')}
+      );
   }
 
   public addBoard(){
     const newBoard = new Board(this.boards.length + 1, "New Board" + (this.boards.length+1), Array());
-    this.trelloApiService.addBoard(newBoard);
+    // this.trelloApiService.addBoard(newBoard);
   }
 }
