@@ -1,7 +1,5 @@
 import { Injectable } from '@angular/core';
 import {Board} from '../model/board';
-import {Task} from '../model/task';
-import {SubTask} from '../model/subTask';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {tap} from 'rxjs/operators';
@@ -17,8 +15,7 @@ export class TrelloApiService {
   constructor(private _http: HttpClient) {
   }
 
-  public getBoardsJSON(): Observable<any> {
-    console.log(this.boards);
+  public getBoards(): Observable<any> {
     if(this.boards == undefined) {
       return this._http.get(this._boardUrl)
         .pipe(
@@ -30,8 +27,7 @@ export class TrelloApiService {
   }
 
   private saveBoards(boards: any) {
-    this.boards = boards;
     console.log(boards);
-    console.log(this.boards);
+    this.boards = boards;
   }
 }

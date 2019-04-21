@@ -15,7 +15,7 @@ export class HomepageComponent implements OnInit {
 
   ngOnInit() {
     this.trelloApiService
-      .getBoardsJSON()
+      .getBoards()
       .subscribe(
         boards => {this.boards = boards},
         error => {console.log('getBoards Error')}
