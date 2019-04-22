@@ -6,7 +6,7 @@ import {tap} from 'rxjs/operators';
 import {of} from 'rxjs/internal/observable/of';
 
 @Injectable({
-  providedIn: 'root'
+    providedIn: 'root'
 })
 export class TrelloApiService {
   public boards: Board[];
@@ -27,7 +27,7 @@ export class TrelloApiService {
   }
 
   private saveBoards(boards: any) {
-    console.log(boards);
     this.boards = boards;
   }
+
 }

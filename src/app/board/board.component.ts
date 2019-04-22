@@ -53,7 +53,7 @@ export class BoardComponent implements OnInit {
     this.addtaskText = '';
   }
 
-  private addtask() {
+  public addtask() {
     let id = this.board.task.length + 1;
     this.board.task.push(new Task(id, this.addtaskText, Array.of(), id.toString()));
     this.addtaskText = '';

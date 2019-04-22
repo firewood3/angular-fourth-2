@@ -24,6 +24,6 @@ export class HomepageComponent implements OnInit {
 
   public addBoard(){
     const newBoard = new Board(this.boards.length + 1, "New Board" + (this.boards.length+1), Array());
-    // this.trelloApiService.addBoard(newBoard);
+    this.boards.push(newBoard);
   }
 }

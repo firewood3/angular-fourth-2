@@ -10,6 +10,7 @@ import { SubtaskComponent } from './board/task/subtask/subtask.component';
 import {FormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import {CustomSort} from './pipes/customsort.pipe';
+import { FooterComponent } from './footer/footer.component';
 
 const appRoutes: Routes = [
   { path: 'board/:id', component: BoardComponent, pathMatch: 'full' },
@@ -24,7 +25,8 @@ const appRoutes: Routes = [
     BoardComponent,
     TaskComponent,
     SubtaskComponent,
-    CustomSort
+    CustomSort,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
